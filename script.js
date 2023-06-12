@@ -64,7 +64,7 @@ const db = mysql.createConnection(
           connection.end();
         }
       });
-    }
+    };
   
 
 
@@ -90,26 +90,46 @@ const db = mysql.createConnection(
 };
 
 function addDepartment(){
+
+
+    inquirer.prompt({
+      
+        type: "input",
+        message: "What is the name of the department?",
+        name: "deptName"
+
+    }).then(function(answer){
+
+        db.query("INSERT INTO department (name) VALUES (?)", [answer.deptName] , function(err, results) {
+            if (err) throw err;
+            console.table(results)
+            runSearch();
+    });
+});
+};
+
+// Add functionality to allow user to add a new department
+function addDepartment(){
     db.query('', function (err, results){
         console.table(results);
         runSearch();
     });
 };
-
+// Add functionality to allow user to add a new role
 function addRole(){
     db.query('', function (err, results){
         console.table(results);
         runSearch();
     });
 };
-
+// Add functionality to allow user to add a new employee
 function addEmployee(){
     db.query('', function (err, results){
         console.table(results);
         runSearch();
     });
 };
-
+// Add functionality to allow user to update employee role
 function updateEmployeeRole(){
     db.query('', function (err, results){
         console.table(results);
