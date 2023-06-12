@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/PatrickJaMc/Challenge-12-SQL-Employee-Tracker#readme",
   "dependencies": {
-    "inquirer": "^8.2.4"
+    "inquirer": "^8.2.4",
+    "mysql2": "^3.3.4"
   }
 }
