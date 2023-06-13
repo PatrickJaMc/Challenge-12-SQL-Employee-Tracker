@@ -90,9 +90,8 @@ const db = mysql.createConnection(
 };
 
 function addDepartment(){
-
-
-    inquirer.prompt({
+    inquirer
+      .prompt({
       
         type: "input",
         message: "What is the name of the department?",
